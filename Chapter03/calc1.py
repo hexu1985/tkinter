@@ -1,4 +1,7 @@
-from Tkinter import *
+try:
+    from tkinter import *   # Python 3
+except ImportError:
+    from Tkinter import *   # Python 2
 
 def frame(root, side): 
     w = Frame(root)
@@ -19,9 +22,9 @@ class Calculator(Frame):
         self.master.iconname("calc1")
 
         display = StringVar()
-    	Entry(self, relief=SUNKEN, 
-		textvariable=display).pack(side=TOP, expand=YES, 
-			fill=BOTH)
+        Entry(self, relief=SUNKEN, 
+                textvariable=display).pack(side=TOP, expand=YES, 
+                        fill=BOTH)
 
         for key in ("123", "456", "789", "-0."):
             keyF = frame(self, TOP)
@@ -44,7 +47,8 @@ class Calculator(Frame):
 
     def calc(self, display):
         try:
-            display.set(`eval(display.get())`)
+            # display.set(`eval(display.get())`)    # python2 only
+            display.set(eval(display.get()))
         except:
             display.set("ERROR")
 
