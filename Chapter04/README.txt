@@ -5,3 +5,6 @@
 图4.5 - label.py
 图4.6 - button.py
 图4.7 - button2.py
+图4.8 - entry.py
+图4.9 - radiobutton.py
+图4.10 - radiobutton2.py
