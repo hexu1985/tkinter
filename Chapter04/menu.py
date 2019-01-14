@@ -1,13 +1,16 @@
-from Tkinter import *
+try:
+    from tkinter import *   # Python 3
+except ImportError:
+    from Tkinter import *   # Python 2
 
 def new_file():
-    print "Open new file"
+    print("Open new file")
 
 def open_file():
-    print "Open existing file"
+    print("Open existing file")
 
 def stub_action():
-    print "Menu select"
+    print("Menu select")
 
 def makeCommandMenu():
     CmdBtn = Menubutton(mBar, text='Button Commands', underline=0)
@@ -20,12 +23,12 @@ def makeCommandMenu():
     CmdBtn.menu.add_command(label='New...', underline=0, command=new_file)
     CmdBtn.menu.add_command(label='Open...', underline=0, command=open_file)
     CmdBtn.menu.add_command(label='Wild Font', underline=0,
-		font=('Tempus Sans ITC', 14), command=stub_action)
+        font=('Tempus Sans ITC', 14), command=stub_action)
     CmdBtn.menu.add_command(bitmap="@bitmaps/RotateLeft")
     CmdBtn.menu.add('separator')
     CmdBtn.menu.add_command(label='Quit', underline=0, 
-		background='white', activebackground='green', 
-		command=CmdBtn.quit)
+        background='white', activebackground='green', 
+        command=CmdBtn.quit)
 
     CmdBtn['menu'] = CmdBtn.menu
     return CmdBtn
@@ -49,7 +52,7 @@ def makeCascadeMenu():
     CasBtn.menu.choices.add_command(label='Filing Cabinet')
     CasBtn.menu.choices.add_command(label='Goldfish')
     CasBtn.menu.choices.add_cascade(label='Is it a...', 
-	menu=CasBtn.menu.choices.wierdones)
+    menu=CasBtn.menu.choices.wierdones)
 
     CasBtn.menu.add_cascade(label='Scipts', menu=CasBtn.menu.choices)
     CasBtn['menu'] = CasBtn.menu
@@ -105,7 +108,7 @@ ChkBtn = makeCheckbuttonMenu()
 RadBtn = makeRadiobuttonMenu()
 NoMenu = makeDisabledMenu()
 
-mBar.tk_menuBar(CmdBtn, CasBtn, ChkBtn, RadBtn, NoMenu)
+#mBar.tk_menuBar(CmdBtn, CasBtn, ChkBtn, RadBtn, NoMenu)    # remove because of python3 compatibility
 
 root.title('Menus')
 root.mainloop()
