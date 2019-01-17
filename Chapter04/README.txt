@@ -10,3 +10,9 @@
 图4.10 - radiobutton2.py
 图4.11 - checkbutton.py
 图4.1[2-6] - menu.py
+图4.17 - message.py
+图4.18 - text.py
+图4.19 - canvas.py
+图4.20 - scrollbar.py
+图4.21 - listbox.py
+图4.22 - scale.py

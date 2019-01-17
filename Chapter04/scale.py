@@ -1,9 +1,10 @@
-from Tkinter import *
-import string
-
+try:
+    from tkinter import *   # Python 3
+except ImportError:
+    from Tkinter import *   # Python 2
 
 def setHeight(canvas, heightStr):
-    height = string.atoi(heightStr)
+    height = int(heightStr)
     height = height + 21
     y2 = height - 30
     if y2 < 21:
